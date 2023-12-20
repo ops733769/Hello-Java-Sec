@@ -33,4 +33,4 @@ docker run -it --rm \
     adoptopenjdk/maven-openjdk11:latest \
     mvn clean package -U -DskipTests \
     && docker build -t "$image_name" . \
-    && docker run -itd --name "$final_container_name" -p "$external_port":8888 "$image_name"
+    && docker run -itd --name "$final_container_name" -p "$external_port":8888  -e  MORESEC_AGENT_NAME="$final_container_name"  "$image_name"
