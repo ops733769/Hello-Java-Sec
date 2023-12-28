@@ -31,6 +31,7 @@ docker run -it --rm \
     -v "$project_directory":/root/Hello-Java-Sec \
     -w /root/Hello-Java-Sec \
     adoptopenjdk/maven-openjdk11:latest \
+    mvn dependency:go-offline  \
     mvn clean package -U -DskipTests \
     && docker build -t "$image_name" . \
     && docker run -itd --name "$final_container_name" -p "$external_port":8888  "$image_name"
