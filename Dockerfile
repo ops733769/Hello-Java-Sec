@@ -1,6 +1,5 @@
 # 设置基础镜像
-FROM openjdk:11-jre-slim
-RUN apk add --no-cache ttf-dejavu
+FROM openjdk:8-jre-slim
 # 设置工作目录为 /app
 WORKDIR /app
 # 将当前目录下的所有文件复制到容器的 /app 目录中
